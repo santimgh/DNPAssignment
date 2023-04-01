@@ -36,10 +36,21 @@ public class UserLogic : IUserLogic
     private static void ValidateData(UserCreationDto userToCreate)
     {
         string userName = userToCreate.Username;
+        string passWord = userToCreate.PassWord;
 
         if (userName.Length < 3)
             throw new Exception("Username is too short. At least 3 characters!");
         if (userName.Length > 15)
             throw new Exception("Username is too long. No more than 15 characters!");
+        if (userName.Contains(" ") || passWord.Contains(" "))
+            throw new Exception("Do not leave empty spaces in the username or password");
+        if (userName.Contains("@") || userName.Contains("#") || userName.Contains("!") || userName.Contains(",") ||
+            userName.Contains(";")
+            || userName.Contains("(") || userName.Contains(")") || userName.Contains("?") || userName.Contains("$") ||
+            userName.Contains("%")
+            || userName.Contains("'") || userName.Contains("{") || userName.Contains("}") || userName.Contains("+") ||
+            userName.Contains("*")
+            || userName.Contains("/") || userName.Contains("[") || userName.Contains("]") || userName.Contains("^"))
+            throw new Exception("Do not use special characters. The only allowed are '-' or '_' or '.' ");
     }
 }

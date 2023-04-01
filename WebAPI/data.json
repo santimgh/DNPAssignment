@@ -17,6 +17,12 @@
       "UserName": "Hello",
       "Password": "World",
       "PostsList": null
+    },
+    {
+      "Id": 4,
+      "UserName": "Test2",
+      "Password": "Testing",
+      "PostsList": null
     }
   ],
   "Posts": []
