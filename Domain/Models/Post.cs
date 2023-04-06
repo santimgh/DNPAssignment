@@ -2,7 +2,7 @@
 
 public class Post
 {
-    public User Owner { get; }
+    public User Owner { get; set; }
     public string Title { get; set; }
     public string Body { get; set; }
 
@@ -12,4 +12,5 @@ public class Post
         Title = title;
         Body = body;
     }
+    
 }
