@@ -2,15 +2,15 @@
 
 public class PostCreationDto
 {
-    public String username { get; }
-
+    public int usernameId { get; }
+    
     public String title { get; }
 
     public String body { get; }
 
-    public PostCreationDto(String username, String title, String body)
+    public PostCreationDto(int id, String title, String body)
     {
-        this.username = username;
+        usernameId = id;
         this.title = title;
         this.body = body;
     }

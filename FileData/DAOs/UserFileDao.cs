@@ -35,4 +35,10 @@ public class UserFileDao : IUserDao
             context.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.OrdinalIgnoreCase));
         return Task.FromResult(existing);
     }
+
+    public Task<User?> GetByIdAsync(int dtoUsernameId)
+    {
+        User? existing = context.Users.FirstOrDefault(u => u.Id.Equals(dtoUsernameId));
+        return Task.FromResult(existing);
+    }
 }
