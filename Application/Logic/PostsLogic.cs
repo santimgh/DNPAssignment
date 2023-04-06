@@ -32,5 +32,9 @@ public class PostsLogic : IPostsLogic
         Post newPost = await PostDao.Create(toCreate);
         return newPost;
     }
-    
+
+    public Task<IEnumerable<Post>> GetAllAsync()
+    {
+        return PostDao.GetAllAsync();
+    }
 }

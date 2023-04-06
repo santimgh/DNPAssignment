@@ -32,6 +32,7 @@ public class UserLogic : IUserLogic
         User created = await userDao.CreateAsync(toCreate);
         return created;
     }
+    
 
     private static void ValidateData(UserCreationDto userToCreate)
     {
