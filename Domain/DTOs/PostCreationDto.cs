@@ -8,9 +8,9 @@ public class PostCreationDto
 
     public String body { get; }
 
-    public PostCreationDto(int id, String title, String body)
+    public PostCreationDto(int usernameId, String title, String body)
     {
-        usernameId = id;
+        this.usernameId = usernameId;
         this.title = title;
         this.body = body;
     }

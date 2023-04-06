@@ -28,9 +28,4 @@ public class PostFileDao : IPostDao
         
         return Task.FromResult(post);
     }
-
-    public void AssignPost(Post post, User user)
-    {
-        user.PostsList.Add(post.postId);
-    }
 }

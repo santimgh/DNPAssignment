@@ -3,27 +3,30 @@
     {
       "Id": 1,
       "UserName": "Santi",
-      "Password": "1234",
-      "PostsList": null
+      "Password": "1234"
     },
     {
       "Id": 2,
       "UserName": "Walid",
-      "Password": "4321",
-      "PostsList": null
+      "Password": "1234"
     },
     {
       "Id": 3,
-      "UserName": "Francesco",
-      "Password": "1234",
-      "PostsList": null
+      "UserName": "Marta",
+      "Password": "1234"
     },
     {
       "Id": 4,
-      "UserName": "Marta",
-      "Password": "4321",
-      "PostsList": null
+      "UserName": "Francesco",
+      "Password": "1234"
     }
   ],
-  "Posts": []
+  "Posts": [
+    {
+      "postId": 1,
+      "userId": 1,
+      "Title": "Balls",
+      "Body": "In ur jaw"
+    }
+  ]
 }

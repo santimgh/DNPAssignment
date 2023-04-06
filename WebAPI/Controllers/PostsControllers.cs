@@ -18,12 +18,12 @@ public class PostsControllers : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Post>> CreateAsync(PostCreationDto dto)
+    public async Task<ActionResult<Post>> CreateAsync([FromBody]PostCreationDto dto)
     {
         try
         {
             Post postCreated = await PostsLogic.Create(dto);
-            return Created($"/posts/{postCreated.postId}", postCreated);
+            return Created($"/post/{postCreated.postId}", postCreated);
         }
         catch (Exception e)
         {

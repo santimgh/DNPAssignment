@@ -30,7 +30,7 @@ public class PostsLogic : IPostsLogic
         };
 
         Post newPost = await PostDao.Create(toCreate);
-        PostDao.AssignPost(newPost, user);
         return newPost;
     }
+    
 }
