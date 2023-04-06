@@ -2,28 +2,31 @@
   "Users": [
     {
       "Id": 1,
-      "UserName": "UserTest",
-      "Password": "PasswordTest",
-      "PostsList": null
+      "UserName": "Santi",
+      "Password": "1234"
     },
     {
       "Id": 2,
-      "UserName": "Santi",
-      "Password": "PasswordTest",
-      "PostsList": null
+      "UserName": "Walid",
+      "Password": "1234"
     },
     {
       "Id": 3,
-      "UserName": "Hello",
-      "Password": "World",
-      "PostsList": null
+      "UserName": "Marta",
+      "Password": "1234"
     },
     {
       "Id": 4,
-      "UserName": "Test2",
-      "Password": "Testing",
-      "PostsList": null
+      "UserName": "Francesco",
+      "Password": "1234"
     }
   ],
-  "Posts": []
+  "Posts": [
+    {
+      "postId": 1,
+      "userId": 1,
+      "Title": "Balls",
+      "Body": "In ur jaw"
+    }
+  ]
 }

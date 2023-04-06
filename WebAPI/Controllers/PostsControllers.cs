@@ -1,6 +1,7 @@
 ﻿using Application.Logic;
 using Application.LogicInterfaces;
 using Microsoft.AspNetCore.Mvc;
+using Shared.DTOs;
 using Shared.Models;
 
 namespace WebAPI.Controllers;
@@ -17,12 +18,12 @@ public class PostsControllers : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Post>> CreateAsync(Post post, [FromRoute]User user)
+    public async Task<ActionResult<Post>> CreateAsync([FromBody]PostCreationDto dto)
     {
         try
         {
-            Post postCreated = await PostsLogic.Create(post, user);
-            return Created($"/posts/{post.Owner}", post);
+            Post postCreated = await PostsLogic.Create(dto);
+            return Created($"/post/{postCreated.postId}", postCreated);
         }
         catch (Exception e)
         {

@@ -14,8 +14,18 @@ public class PostFileDao : IPostDao
     }
     public Task<Post> Create(Post post)
     {
+        int postId = 1;
+        if (_context.Posts.Any())
+        {
+            postId = _context.Posts.Max(p => p.postId);
+            postId++;
+        }
+        
+        post.postId = postId;
+        
         _context.Posts.Add(post);
         _context.SaveChanges();
+        
         return Task.FromResult(post);
     }
 }
