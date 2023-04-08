@@ -5,10 +5,10 @@ public class UserCreationDto
     public string Username { get; }
     public string PassWord { get; }
 
-    public UserCreationDto(string username, string passWord)
+    public UserCreationDto(string username, string password)
     {
         Username = username;
-        PassWord = passWord;
+        PassWord = password;
     }
 
 }
