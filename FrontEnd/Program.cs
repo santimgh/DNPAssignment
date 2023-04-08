@@ -15,5 +15,6 @@ builder.Services.AddScoped(
         }
 );
 builder.Services.AddScoped<IUserService, UserHttpClient>();
+builder.Services.AddScoped<IPostsService, PostHttpClient>();
 
 await builder.Build().RunAsync();
