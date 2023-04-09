@@ -8,11 +8,11 @@ namespace WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PostsControllers : ControllerBase
+public class PostsController : ControllerBase
 {
     private readonly IPostsLogic PostsLogic;
 
-    public PostsControllers(IPostsLogic postsLogic)
+    public PostsController(IPostsLogic postsLogic)
     {
         PostsLogic = postsLogic;
     }

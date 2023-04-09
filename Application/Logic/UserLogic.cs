@@ -33,7 +33,17 @@ public class UserLogic : IUserLogic
         User created = await userDao.CreateAsync(toCreate);
         return created;
     }
-    
+
+    public Task<IEnumerable<User>> GetAllAsync()
+    {
+        return userDao.GetAllAsync();
+    }
+
+    public Task<User?> GetUserByIdAsync(int id)
+    {
+        return userDao.GetByIdAsync(id);
+    }
+
 
     private static void ValidateData(UserCreationDto userToCreate)
     {

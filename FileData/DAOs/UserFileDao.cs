@@ -41,4 +41,10 @@ public class UserFileDao : IUserDao
         User? existing = context.Users.FirstOrDefault(u => u.Id.Equals(dtoUsernameId));
         return Task.FromResult(existing);
     }
+
+    public Task<IEnumerable<User>> GetAllAsync()
+    {
+        IEnumerable<User> users = context.Users.AsEnumerable();
+        return Task.FromResult(users);
+    }
 }
