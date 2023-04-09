@@ -28,6 +28,21 @@ public class PostsControllers : ControllerBase
         catch (Exception e)
         {
             Console.WriteLine(e);
+            return StatusCode(403, e.Message);
+        }
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Post>>> GetAllAsync()
+    {
+        try
+        {
+            var posts = await PostsLogic.GetAllAsync();
+            return Ok(posts);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
             return StatusCode(500, e.Message);
         }
     }
