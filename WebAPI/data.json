@@ -19,6 +19,21 @@
       "Id": 4,
       "UserName": "Francesco",
       "Password": "1234"
+    },
+    {
+      "Id": 5,
+      "UserName": "martinhafofinha",
+      "Password": "SmashOrpass"
+    },
+    {
+      "Id": 6,
+      "UserName": "ggggg",
+      "Password": "pipiPIPI"
+    },
+    {
+      "Id": 7,
+      "UserName": "string",
+      "Password": "string"
     }
   ],
   "Posts": [
