@@ -1,9 +1,12 @@
-﻿using FileData.DaoInterfaces;
+﻿
+using System.ComponentModel.DataAnnotations;
+using Application.Services;
+using FileData.DaoInterfaces;
 using Shared.Models;
 
 namespace FileData.DAOs;
 
-public class UserFileDao : IUserDao
+public class UserFileDao : IUserDao, IAuthService
 {
 
     private readonly FileContext context;
@@ -46,5 +49,50 @@ public class UserFileDao : IUserDao
     {
         IEnumerable<User> users = context.Users.AsEnumerable();
         return Task.FromResult(users);
+    }
+
+    public Task<User> GetUser(string username, string password)
+    {
+        User? existingUser =
+            context.Users.FirstOrDefault(u => u.UserName.Equals(username, StringComparison.OrdinalIgnoreCase));
+
+        if (existingUser==null)
+        {
+            throw new Exception("User not found");
+        }
+
+        if (!existingUser.Password.Equals(password))
+        {
+            throw new Exception("Password mismatch");
+        }
+
+        return Task.FromResult(existingUser);
+    }
+
+    public Task RegisterUser(User user)
+    {
+        if (string.IsNullOrEmpty(user.UserName))
+        {
+            throw new ValidationException("Username cannot be null");
+        }
+
+        if (string.IsNullOrEmpty(user.Password))
+        {
+            throw new ValidationException("Password cannot be null");
+        }
+
+        if (string.IsNullOrEmpty(user.Email))
+        {
+            throw new ValidationException("Email cannot be null");
+        }
+
+        if (string.IsNullOrEmpty(user.Name))
+        {
+            throw new ValidationException("Name cannot be null");
+        }
+        
+        context.Users.Add(user);
+        context.SaveChanges();
+        return Task.CompletedTask;
     }
 }
