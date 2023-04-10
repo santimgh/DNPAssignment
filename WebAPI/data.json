@@ -7,6 +7,14 @@
       "Password": "1234",
       "Name": "Santiago Gomez",
       "SecurityLevel": 0
+    },
+    {
+      "Id": 2,
+      "UserName": "Mario",
+      "Email": "",
+      "Password": "1234",
+      "Name": "",
+      "SecurityLevel": 0
     }
   ],
   "Posts": [
@@ -21,6 +29,24 @@
       "userId": 1,
       "Title": "Kapybara and balls",
       "Body": "More balls"
+    },
+    {
+      "postId": 3,
+      "userId": 2,
+      "Title": "Frappa",
+      "Body": ""
+    },
+    {
+      "postId": 4,
+      "userId": 2,
+      "Title": "Malaa",
+      "Body": ""
+    },
+    {
+      "postId": 5,
+      "userId": 2,
+      "Title": "Marianna",
+      "Body": ""
     }
   ]
 }

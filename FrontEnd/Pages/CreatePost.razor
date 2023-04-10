@@ -56,7 +56,7 @@
         msg = "";
         try
         {
-            users = await userService.GetUsers();
+            users = await userService.GetAsync(null,null,null);
         }
         catch (Exception e)
         {
