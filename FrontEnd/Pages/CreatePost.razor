@@ -5,6 +5,7 @@
 @inject IUserService userService
 @inject IPostsService postService;
 @inject NavigationManager navMgr
+@inject IJSRuntime JsRuntime
 <h3>CreatePost</h3>
 <div class="card">
     @if (users == null)
@@ -82,7 +83,8 @@
         {
             PostCreationDto dto = new PostCreationDto((int)selectedUserId, postTitle, body);
             await postService.CreateAsync(dto);
-            navMgr.NavigateTo("/");
+            await JsRuntime.InvokeVoidAsync("alert", "Post Created"); // Alert
+            postTitle = "";
         }
         catch (Exception e)
         {

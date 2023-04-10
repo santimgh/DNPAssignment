@@ -2,36 +2,50 @@
   "Users": [
     {
       "Id": 1,
+      "Email": null,
+      "Name": null,
       "UserName": "Santi",
       "Password": "1234"
     },
     {
       "Id": 2,
+      "Email": null,
+      "Name": null,
       "UserName": "Walid",
       "Password": "1234"
     },
     {
       "Id": 3,
+      "Email": null,
+      "Name": null,
       "UserName": "Marta",
       "Password": "1234"
     },
     {
       "Id": 4,
+      "Email": null,
+      "Name": null,
       "UserName": "Francesco",
       "Password": "1234"
     },
     {
       "Id": 5,
+      "Email": null,
+      "Name": null,
       "UserName": "martinhafofinha",
       "Password": "SmashOrpass"
     },
     {
       "Id": 6,
+      "Email": null,
+      "Name": null,
       "UserName": "ggggg",
       "Password": "pipiPIPI"
     },
     {
       "Id": 7,
+      "Email": null,
+      "Name": null,
       "UserName": "string",
       "Password": "string"
     }
@@ -48,6 +62,54 @@
       "userId": 1,
       "Title": "Kapybara and balls",
       "Body": "More balls"
+    },
+    {
+      "postId": 3,
+      "userId": 1,
+      "Title": "abc",
+      "Body": ""
+    },
+    {
+      "postId": 4,
+      "userId": 1,
+      "Title": "abc",
+      "Body": ""
+    },
+    {
+      "postId": 5,
+      "userId": 3,
+      "Title": "asino",
+      "Body": ""
+    },
+    {
+      "postId": 6,
+      "userId": 2,
+      "Title": "aaabc",
+      "Body": ""
+    },
+    {
+      "postId": 7,
+      "userId": 1,
+      "Title": "aasas",
+      "Body": ""
+    },
+    {
+      "postId": 8,
+      "userId": 1,
+      "Title": "aba",
+      "Body": ""
+    },
+    {
+      "postId": 9,
+      "userId": 2,
+      "Title": "abbc",
+      "Body": ""
+    },
+    {
+      "postId": 10,
+      "userId": 2,
+      "Title": "adasdasdsad",
+      "Body": ""
     }
   ]
 }
