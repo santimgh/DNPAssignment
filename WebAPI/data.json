@@ -2,59 +2,11 @@
   "Users": [
     {
       "Id": 1,
-      "Name": null,
-      "Email": null,
-      "UserName": "Santi",
-      "Password": "1234"
-    },
-    {
-      "Id": 2,
-      "Name": null,
-      "Email": null,
-      "UserName": "Walid",
-      "Password": "1234"
-    },
-    {
-      "Id": 3,
-      "Name": null,
-      "Email": null,
-      "UserName": "Marta",
-      "Password": "1234"
-    },
-    {
-      "Id": 4,
-      "Name": null,
-      "Email": null,
-      "UserName": "Francesco",
-      "Password": "1234"
-    },
-    {
-      "Id": 5,
-      "Name": null,
-      "Email": null,
-      "UserName": "martinhafofinha",
-      "Password": "SmashOrpass"
-    },
-    {
-      "Id": 6,
-      "Name": null,
-      "Email": null,
-      "UserName": "ggggg",
-      "Password": "pipiPIPI"
-    },
-    {
-      "Id": 7,
-      "Name": null,
-      "Email": null,
-      "UserName": "string",
-      "Password": "string"
-    },
-    {
-      "Id": 8,
-      "Name": "Santiago G\u00F3mez",
-      "Email": "santi@via.dk",
       "UserName": "SantiUsername",
-      "Password": "PasswordTest"
+      "Email": "santi@via.dk",
+      "Password": "1234",
+      "Name": "Santiago Gomez",
+      "SecurityLevel": 0
     }
   ],
   "Posts": [
