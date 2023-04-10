@@ -26,6 +26,8 @@ public class UserLogic : IUserLogic
         
         User toCreate = new User
         {
+            Name = dto.Name,
+            Email = dto.Email,
             UserName = dto.Username,
             Password = dto.PassWord
         };
