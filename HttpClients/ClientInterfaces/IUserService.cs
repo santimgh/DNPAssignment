@@ -7,5 +7,5 @@ namespace Httplients.ClientInterfaces;
 public interface IUserService
 {
     Task<User> Create(UserCreationDto dto);
-    Task<IEnumerable<User>> GetUsers(string? usernameContains = null);
+    Task<ICollection<User>> GetAsync(string? userName, int? userId, string? name);
 }

@@ -18,11 +18,16 @@
     </ItemGroup>
 
     <ItemGroup>
+<<<<<<< HEAD
       <None Update="Pages\Login.css">
         <DependentUpon>Login.razor</DependentUpon>
       </None>
       <None Update="Pages\Buttons.css">
         <DependentUpon>LoginButtons.razor</DependentUpon>
+=======
+      <None Update="Pages\ViewPosts.css">
+        <DependentUpon>ViewPosts.razor</DependentUpon>
+>>>>>>> origin/master
       </None>
     </ItemGroup>
 
