@@ -1,9 +1,7 @@
 ﻿@page "/Login"
 @using FrontEnd.Services.Http
-@using Microsoft.AspNetCore.Components.Authorization
 @inject IAuthService authService
 @inject NavigationManager navMgr
-
 <AuthorizeView>
     <NotAuthorized>
         <div class="card">
@@ -30,12 +28,9 @@
         </div>
     </NotAuthorized>
     <Authorized>
-        <div class="card">
-            <h3>Welcome, @context.User.Identity.Name</h3>
-        </div>
+        <h3>You have succesfully logged in</h3>
     </Authorized>
 </AuthorizeView>
-
 @code {
     private string userName;
     private string password;
@@ -55,7 +50,4 @@
             errorLabel = $"Error: {e.Message}";
         }
     }
-    
-    
 }
-

@@ -1,4 +1,4 @@
-﻿@using FrontEnd.Services
+﻿
 @using FrontEnd.Services.Http
 @namespace Login
 @inject NavigationManager navMgr
@@ -25,4 +25,5 @@
         await authService.LogoutAsync();
         navMgr.NavigateTo("/");
     }
+
 }

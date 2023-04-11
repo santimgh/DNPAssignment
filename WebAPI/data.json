@@ -7,14 +7,6 @@
       "Password": "1234",
       "Name": "Santiago Gomez",
       "SecurityLevel": 0
-    },
-    {
-      "Id": 2,
-      "UserName": "Mario",
-      "Email": "",
-      "Password": "1234",
-      "Name": "",
-      "SecurityLevel": 0
     }
   ],
   "Posts": [
@@ -46,6 +38,18 @@
       "postId": 5,
       "userId": 2,
       "Title": "Marianna",
+      "Body": ""
+    },
+    {
+      "postId": 6,
+      "userId": 1,
+      "Title": "Testing the Title",
+      "Body": ""
+    },
+    {
+      "postId": 7,
+      "userId": 1,
+      "Title": "Second test",
       "Body": ""
     }
   ]

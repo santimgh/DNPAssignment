@@ -1,13 +1,14 @@
 ﻿@inject IPostsService postsService;
 @inject IUserService userService;
-
-
 @page "/ViewPosts"
 @using Httplients.ClientInterfaces
 @using global::Shared.Models
 @using global::Shared.DTOs
+@inject NavigationManager NavigationManager
+@attribute [Authorize]
+
 <div class="card">
-    <h3>Todos</h3>
+    <h3>Posts</h3>
 
     <div>
         <button @onclick="LoadPosts">Load</button>
@@ -18,7 +19,7 @@
     }
     else if (!posts.Any())
     {
-        <p>No Todos to display</p>
+        <p>No posts to display</p>
     }
     else
     {
@@ -27,7 +28,6 @@
             <tr>
                 <th>Title</th>
                 <th>Owner ID</th>
-                <th>Title</th>
             </tr>
             </thead>
             <tbody>
@@ -35,7 +35,7 @@
             {
                 <tr>
                     <td>@item.Title</td>
-                    <td>@item.postId</td>
+                    <td>@item.userId</td>
                 </tr>
             }
             </tbody>
@@ -85,6 +85,12 @@
             Console.WriteLine(e);
             msg = e.Message;
         }
+    }
+
+    private async Task goToPost(int itemPostId)
+    {
+        postsService.id = itemPostId;
+        NavigationManager.NavigateTo("/ViewOnePost");
     }
 
 }
