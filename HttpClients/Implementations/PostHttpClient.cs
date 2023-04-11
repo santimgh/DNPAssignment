@@ -18,7 +18,7 @@ public class PostHttpClient : IPostsService
 
     public async Task CreateAsync(PostCreationDto dto)
     {
-        HttpResponseMessage response = await client.PostAsJsonAsync("/posts",dto);
+        HttpResponseMessage response = await client.PostAsJsonAsync("/posts", dto);
         if (!response.IsSuccessStatusCode)
         {
             string content = await response.Content.ReadAsStringAsync();
@@ -26,10 +26,21 @@ public class PostHttpClient : IPostsService
         }
     }
 
-    
+
     public async Task<ICollection<Post>> GetAsync(string? title, int? userId, int? postId, string? body)
     {
-        HttpResponseMessage response = await client.GetAsync("/posts");
+        //string querry = ConstructQuery(title, userId, postId, body);
+        string querry;
+        if (postId == null)
+        {
+            querry = "";
+        }
+        else
+        {
+            querry = $"/postid={postId}";
+        }
+
+        HttpResponseMessage response = await client.GetAsync("/posts" + querry);
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
@@ -42,8 +53,8 @@ public class PostHttpClient : IPostsService
         })!;
         return posts;
     }
-    
-    
+
+
     private static string ConstructQuery(string? title, int? userId, int? postId, string? body)
     {
         string query = "";
@@ -55,12 +66,13 @@ public class PostHttpClient : IPostsService
         if (userId != null)
         {
             query += string.IsNullOrEmpty(query) ? "?" : "&";
-            query += $"userid={userId}";
+            query += $"?userid={userId}";
         }
+
         if (postId != null)
         {
             query += string.IsNullOrEmpty(query) ? "?" : "&";
-            query += $"postid={postId}";
+            query += $"?postid={postId}";
         }
 
         if (!string.IsNullOrEmpty(body))
@@ -70,5 +82,4 @@ public class PostHttpClient : IPostsService
 
         return query;
     }
-    
 }

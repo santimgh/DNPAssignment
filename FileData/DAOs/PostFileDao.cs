@@ -34,4 +34,35 @@ public class PostFileDao : IPostDao
         IEnumerable<Post> posts = _context.Posts.AsEnumerable();
         return Task.FromResult(posts);
     }
+
+    public Task<IEnumerable<Post>> GetPostByIdAsync(int id)
+    {
+        IEnumerable<Post>? existingPost = _context.Posts.Where(p =>p.postId==id );
+        if (existingPost==null)
+        {
+            throw new Exception("Post not found");
+        }
+        return Task.FromResult(existingPost);
+    }
+    
+    // public Task<Post> GetPostByTitleAsync(int id)
+    // {
+    //     Post? existingPost = _context.Posts.FirstOrDefault(p =>p.postId==id );
+    //     if (existingPost==null)
+    //     {
+    //         throw new Exception("Post not found");
+    //     }
+    //     return Task.FromResult(existingPost);
+    // }
+    //
+    // public Task<Post> GetPostBy....Async(int id)
+    // {
+    //     Post? existingPost = _context.Posts.FirstOrDefault(p =>p.postId==id );
+    //     if (existingPost==null)
+    //     {
+    //         throw new Exception("Post not found");
+    //     }
+    //     return Task.FromResult(existingPost);
+    // }
+    
 }

@@ -1,0 +1,58 @@
+﻿@page "/post/{postId}"
+@using global::Shared.Models
+@using Httplients.ClientInterfaces
+@inject IPostsService postsService;
+@inject IUserService userService;
+
+<div class="card">
+    @if (posts == null)
+    {
+        
+    }
+    else if (!posts.Any())
+    {
+        <h2>No Posts to display</h2>
+    }
+    else
+    {
+        @foreach (var item in posts)
+        {
+            <div class="card">
+                <h3>@item.Title</h3>
+                <p>@item.Body</p>
+            </div>
+        }
+    }
+    @if (!string.IsNullOrEmpty(msg))
+    {
+        <label style="color: red">@msg</label>
+    }
+
+</div>
+
+@code {
+
+    [Parameter]
+    public string? PostId { get; set; }
+
+    private IEnumerable<Post> posts;
+    private int? logedUserId;
+    private bool logedIn = false;
+    private string postTitle = "";
+    private string body = "";
+
+    private string msg = "";
+    
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            posts = await postsService.GetAsync(null, null, int.Parse(PostId), null);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+}
