@@ -7,6 +7,14 @@
       "Password": "1234",
       "Name": "Santiago Gomez",
       "SecurityLevel": 0
+    },
+    {
+      "Id": 2,
+      "UserName": "Walid",
+      "Email": "walid@via.dk",
+      "Password": "1234",
+      "Name": "Walid Mooauiau",
+      "SecurityLevel": 0
     }
   ],
   "Posts": [
@@ -51,6 +59,24 @@
       "userId": 1,
       "Title": "Second test",
       "Body": ""
+    },
+    {
+      "postId": 8,
+      "userId": 1,
+      "Title": "Hola",
+      "Body": "testeo"
+    },
+    {
+      "postId": 9,
+      "userId": 1,
+      "Title": "Testing",
+      "Body": "Babababbaba bsa bdasbd sabd"
+    },
+    {
+      "postId": 10,
+      "userId": 1,
+      "Title": "Testinggnngngg",
+      "Body": "asfa sfasf asfasfasfas"
     }
   ]
 }
