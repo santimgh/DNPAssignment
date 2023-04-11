@@ -72,7 +72,7 @@ public class UserHttpClient : IUserService
     
     
     
-    
+
     private static string ConstructQuery(string? userName, int? userId, string? name)
     {
         string query = "";

@@ -30,6 +30,9 @@
       <None Update="Pages\ViewAllPosts.css">
         <DependentUpon>ViewAllPosts.razor</DependentUpon>
       </None>
+      <None Update="Pages\ViewPost.css">
+        <DependentUpon>ViewPost.razor</DependentUpon>
+      </None>
     </ItemGroup>
 
 </Project>

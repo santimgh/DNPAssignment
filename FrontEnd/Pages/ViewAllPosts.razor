@@ -1,18 +1,18 @@
 ﻿@inject IPostsService postsService;
 @inject IUserService userService;
-
+@attribute [Authorize]
 
 @page "/ViewAllPosts"
 @using Httplients.ClientInterfaces
 @using global::Shared.Models
 @using global::Shared.DTOs
-<div class="card">
-    <h3>Todos</h3>
+
+<h3>Posts</h3>
 
     <div>
         <button @onclick="LoadPosts">Load</button>
     </div>
-
+    
     
     @if (posts == null)
     {
@@ -36,13 +36,10 @@
         <label style="color: red">@msg</label>
     }
 
-</div>
-
 @code {
 
     private IEnumerable<Post>? posts;
     private int? logedUserId;
-    private bool logedIn = false;
     private string postTitle = "";
     private string body = "";
 
@@ -61,7 +58,6 @@
             Console.WriteLine(e);
             msg = e.Message;
         }
-        logedIn = true;
     }
 
     private async Task LoadPosts()
