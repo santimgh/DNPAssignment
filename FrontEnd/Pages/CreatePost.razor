@@ -21,13 +21,14 @@
             {
                 <label style="color : @color">@msg</label>
             }
-            <button @onclick="Create1" class="acceptbtn">Create</button>
+            <button @onclick="Create" class="acceptbtn">Create</button>
         </div>
 </div>
 
 
 @code {
-    private Task<IEnumerable<User>> users;
+    private IEnumerable<User> users;
+    private User? foundUser;
     private string todoTitle = "";
     private string PostMessage = "";
     private string msg = "";
@@ -36,7 +37,7 @@
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private string? name;
-    private IEnumerable<Claim>? userClaims;
+    
     private bool isLoggedIn;
 
 
@@ -48,12 +49,15 @@
         
         if (!isLoggedIn) return;
         
-        userClaims = user.Claims;
         name = user.Identity!.Name!;
-        users=userService.GetUsers(name);
+        users= await userService.GetUsers(name);
+        foreach (var u in users)
+        {
+            foundUser = u;
+        }
     }
 
-    private async Task Create1()
+    private async Task Create()
     {
         msg = "";
         if (string.IsNullOrEmpty(todoTitle))
@@ -65,7 +69,7 @@
 
         try
         {
-            PostCreationDto dto = new(users.Id, todoTitle, PostMessage);
+            PostCreationDto dto = new(foundUser.Id, todoTitle, PostMessage);
             await PostService.CreateAsync(dto);
             color = "green";
             msg = "Post created";

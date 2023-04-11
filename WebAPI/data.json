@@ -15,6 +15,22 @@
       "Password": "1234",
       "Name": "Walid Mooauiau",
       "SecurityLevel": 0
+    },
+    {
+      "Id": 2,
+      "UserName": "walid",
+      "Email": "aaaa@via.dk",
+      "Password": "1234",
+      "Name": "walid",
+      "SecurityLevel": 0
+    },
+    {
+      "Id": 3,
+      "UserName": "mario",
+      "Email": "mario",
+      "Password": "1234",
+      "Name": "mario",
+      "SecurityLevel": 0
     }
   ],
   "Posts": [
@@ -77,6 +93,18 @@
       "userId": 1,
       "Title": "Testinggnngngg",
       "Body": "asfa sfasf asfasfasfas"
+    },
+    {
+      "postId": 11,
+      "userId": 2,
+      "Title": "MARIO",
+      "Body": "MAMAMAA"
+    },
+    {
+      "postId": 12,
+      "userId": 3,
+      "Title": "aaaaaaa",
+      "Body": "adsadassada"
     }
   ]
 }

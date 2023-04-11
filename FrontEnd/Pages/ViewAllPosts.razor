@@ -9,32 +9,37 @@
 
 <h3>Posts</h3>
 
-    <div>
-        <button @onclick="LoadPosts">Load</button>
-    </div>
-    
-    
-    @if (posts == null)
+@if (posts == null)
+{
+    <h2>Loading...</h2>
+    try
     {
+        LoadPosts();
     }
-    else if (!posts.Any())
+    catch (Exception e)
     {
-        <h2>No Posts to display</h2>
+        Console.WriteLine(e);
+        throw;
     }
-    else
+    LoadPosts();
+}
+else if (!posts.Any())
+{
+    <h2>No Posts to display</h2>
+}
+else
+{
+    @foreach (var item in posts)
     {
-        @foreach (var item in posts)
-            {
-                <div class="card">
-                    <a href="@($"post/{item.postId}")">@item.Title</a>
-                </div>
-            }
-            
+        <div class="card">
+            <a href="@($"post/{item.postId}")">@item.Title</a>
+        </div>
     }
-    @if (!string.IsNullOrEmpty(msg))
-    {
-        <label style="color: red">@msg</label>
-    }
+}
+@if (!string.IsNullOrEmpty(msg))
+{
+    <label style="color: red">@msg</label>
+}
 
 @code {
 
@@ -48,6 +53,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        LoadPosts();
         msg = "";
         try
         {
