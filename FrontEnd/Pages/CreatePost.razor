@@ -38,9 +38,11 @@
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private string? name;
     
-    private bool isLoggedIn;
+    private bool isLoggedIn;   
 
 
+    
+    
     protected override async Task OnInitializedAsync()
     {
         AuthenticationState authState = await AuthState;
