@@ -18,7 +18,7 @@ public class PostsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Post>> CreateAsync([FromBody]PostCreationDto dto)
+    public async Task<ActionResult<Post>> CreateAsync([FromBody] PostCreationDto dto)
     {
         try
         {
@@ -38,6 +38,21 @@ public class PostsController : ControllerBase
         try
         {
             var posts = await PostsLogic.GetAllAsync();
+            return Ok(posts);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
+    [HttpGet("postid={postId}")]
+    public async Task<ActionResult<IEnumerable<Post>>> GetUserById(int postId)
+    {
+        try
+        {
+            var posts = await PostsLogic.GetPostByIdAsync(postId);
             return Ok(posts);
         }
         catch (Exception e)

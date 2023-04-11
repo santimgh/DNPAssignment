@@ -67,11 +67,10 @@ public class UserHttpClient : IUserService
         {
             PropertyNameCaseInsensitive = true
         })!;
-        
-        Console.WriteLine("//"+query+"//");
-        Console.WriteLine(content+ "/content");
         return posts;
     }
+    
+    
     
     
     private static string ConstructQuery(string? userName, int? userId, string? name)

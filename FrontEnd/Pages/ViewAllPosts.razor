@@ -1,45 +1,35 @@
 ﻿@inject IPostsService postsService;
 @inject IUserService userService;
-@page "/ViewPosts"
+
+
+@page "/ViewAllPosts"
 @using Httplients.ClientInterfaces
 @using global::Shared.Models
 @using global::Shared.DTOs
-@inject NavigationManager NavigationManager
-@attribute [Authorize]
-
 <div class="card">
-    <h3>Posts</h3>
+    <h3>Todos</h3>
 
     <div>
         <button @onclick="LoadPosts">Load</button>
     </div>
 
+    
     @if (posts == null)
     {
     }
     else if (!posts.Any())
     {
-        <p>No posts to display</p>
+        <h2>No Posts to display</h2>
     }
     else
     {
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Title</th>
-                <th>Owner ID</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach (var item in posts)
+        @foreach (var item in posts)
             {
-                <tr>
-                    <td>@item.Title</td>
-                    <td>@item.userId</td>
-                </tr>
+                <div class="card">
+                    <a href="@($"post/{item.postId}")">@item.Title</a>
+                </div>
             }
-            </tbody>
-        </table>
+            
     }
     @if (!string.IsNullOrEmpty(msg))
     {
@@ -85,12 +75,6 @@
             Console.WriteLine(e);
             msg = e.Message;
         }
-    }
-
-    private async Task goToPost(int itemPostId)
-    {
-        postsService.id = itemPostId;
-        NavigationManager.NavigateTo("/ViewOnePost");
     }
 
 }
