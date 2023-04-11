@@ -2,22 +2,6 @@
   "Users": [
     {
       "Id": 1,
-      "UserName": "SantiUsername",
-      "Email": "santi@via.dk",
-      "Password": "1234",
-      "Name": "Santiago Gomez",
-      "SecurityLevel": 0
-    },
-    {
-      "Id": 2,
-      "UserName": "Walid",
-      "Email": "walid@via.dk",
-      "Password": "1234",
-      "Name": "Walid Mooauiau",
-      "SecurityLevel": 0
-    },
-    {
-      "Id": 2,
       "UserName": "walid",
       "Email": "aaaa@via.dk",
       "Password": "1234",
@@ -25,11 +9,19 @@
       "SecurityLevel": 0
     },
     {
-      "Id": 3,
+      "Id": 2,
       "UserName": "mario",
       "Email": "mario",
       "Password": "1234",
       "Name": "mario",
+      "SecurityLevel": 0
+    },
+    {
+      "Id": 3,
+      "UserName": "luigi",
+      "Email": "luigi",
+      "Password": "1234",
+      "Name": "luigi",
       "SecurityLevel": 0
     }
   ],
@@ -105,6 +97,48 @@
       "userId": 3,
       "Title": "aaaaaaa",
       "Body": "adsadassada"
+    },
+    {
+      "postId": 13,
+      "userId": 3,
+      "Title": "dassdasdasrr",
+      "Body": "dsdferewrew"
+    },
+    {
+      "postId": 14,
+      "userId": 3,
+      "Title": "asdasddsqwe",
+      "Body": "asdasd"
+    },
+    {
+      "postId": 15,
+      "userId": 3,
+      "Title": "as21312",
+      "Body": "asds"
+    },
+    {
+      "postId": 16,
+      "userId": 4,
+      "Title": "Luigiii",
+      "Body": "maioo"
+    },
+    {
+      "postId": 17,
+      "userId": 2,
+      "Title": "asasdasddsa",
+      "Body": "dasdasdasd"
+    },
+    {
+      "postId": 18,
+      "userId": 1,
+      "Title": "dasdasdas",
+      "Body": "dasddsadas"
+    },
+    {
+      "postId": 19,
+      "userId": 1,
+      "Title": "I\u0027m gay maybe",
+      "Body": "NO"
     }
   ]
 }

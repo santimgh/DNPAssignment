@@ -7,5 +7,5 @@ namespace Httplients.ClientInterfaces;
     {
         Task CreateAsync(PostCreationDto dto);
         Task<ICollection<Post>> GetAsync(string? title, int? userId, int? postId, string? body);
-        int id { get; set; }
+        
     }

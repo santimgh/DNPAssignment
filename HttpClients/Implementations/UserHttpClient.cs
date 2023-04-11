@@ -55,14 +55,12 @@ public class UserHttpClient : IUserService
     public async Task<ICollection<User>> GetAsync(string? userName, int? userId, string? name)
     {
         string query = ConstructQuery(userName, userId, name);
-        
-        HttpResponseMessage response = await client.GetAsync("/users");
+        HttpResponseMessage response = await client.GetAsync("/users"+"/"+query);
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
             throw new Exception(content);
         }
-
         ICollection<User> posts = JsonSerializer.Deserialize<ICollection<User>>(content, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
@@ -73,23 +71,22 @@ public class UserHttpClient : IUserService
     
     
 
-    private static string ConstructQuery(string? userName, int? userId, string? name)
+    private static string ConstructQuery(string? name, int? userId, string? userName)
     {
         string query = "";
         if (!string.IsNullOrEmpty(userName))
         {
-            query += $"?username={userName}";
+            query += $"username={userName}";
         }
 
         if (userId != null)
         {
-            query += string.IsNullOrEmpty(query) ? "?" : "&";
             query += $"userid={userId}";
         }
 
         if (!string.IsNullOrEmpty(name))
         {
-            query += $"?username={name}";
+            query += $"name={name}";
         }
 
         return query;

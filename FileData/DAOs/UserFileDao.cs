@@ -51,6 +51,17 @@ public class UserFileDao : IUserDao, IAuthService
         return Task.FromResult(users);
     }
 
+    public Task<IEnumerable<User>> GetUserByName(string name)
+    {
+        IEnumerable<User>? existingUser =
+            context.Users.Where(u => u.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+        if (existingUser==null)
+        {
+            throw new Exception("User not found");
+        }
+        return Task.FromResult(existingUser);
+    }
+
     public Task<User> GetUser(string username, string password)
     {
         User? existingUser =

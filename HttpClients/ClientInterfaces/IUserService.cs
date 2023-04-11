@@ -8,5 +8,4 @@ public interface IUserService
 {
     Task<User> Create(UserCreationDto dto);
     Task<ICollection<User>> GetAsync(string? userName, int? userId, string? name);
-    Task<IEnumerable<User>> GetUsers(string name);
 }

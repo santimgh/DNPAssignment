@@ -47,12 +47,27 @@ public class UsersController : ControllerBase
         }
     }
     
-   [HttpGet("{id}")]
+   [HttpGet("id={id}")]
     public async Task<ActionResult<User>> GetUserById(int id)
     {
         try
         {
             var user = await UserLogic.GetUserByIdAsync(id);
+            return Ok(user);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+    
+    [HttpGet("name={name}")]
+    public async Task<ActionResult<IEnumerable<User>>> GetUserByName(string name)
+    {
+        try
+        {
+            var user = await UserLogic.GetUserByName(name);
             return Ok(user);
         }
         catch (Exception e)

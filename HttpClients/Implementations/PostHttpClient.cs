@@ -54,7 +54,7 @@ public class PostHttpClient : IPostsService
         return posts;
     }
 
-    public int id { get; set; }
+    
 
 
     private static string ConstructQuery(string? title, int? userId, int? postId, string? body)

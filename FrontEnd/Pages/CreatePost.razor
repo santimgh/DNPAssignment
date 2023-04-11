@@ -52,7 +52,7 @@
         if (!isLoggedIn) return;
         
         name = user.Identity!.Name!;
-        users= await userService.GetUsers(name);
+        users= await userService.GetAsync(name,null,null);
         foreach (var u in users)
         {
             foundUser = u;

@@ -8,5 +8,5 @@ public interface IUserLogic
     Task<User> Create(UserCreationDto dto);
     Task<IEnumerable<User>> GetAllAsync();
     Task<User?> GetUserByIdAsync(int id);
-    //hello
+    Task<IEnumerable<User>> GetUserByName(string name);
 }
