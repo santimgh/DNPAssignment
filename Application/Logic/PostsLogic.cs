@@ -38,7 +38,7 @@ public class PostsLogic : IPostsLogic
         return PostDao.GetAllAsync();
     }
 
-    public Task<IEnumerable<Post>> GetPostByIdAsync(int id)
+    public Task<Post?> GetPostByIdAsync(int id)
     {
         return PostDao.GetPostByIdAsync(id);
     }

@@ -1,5 +1,6 @@
 ﻿using Application.Services;
 using FileData.DaoInterfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Shared.Models;
 
@@ -40,20 +41,24 @@ public class UserEfcDao : IUserDao, IAuthService
         return existing;
     }
 
-    public Task<IEnumerable<User>> GetAllAsync()
+    public async Task<IEnumerable<User>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        IEnumerable<User> users = context.Users.AsEnumerable();
+        return users;
     }
 
-    public Task<IEnumerable<User>> GetUserByName(string name)
+    public async Task<IEnumerable<User>> GetUserByName(string name)
     {
-        throw new NotImplementedException();
+        IQueryable<User?> query = context.Users.Where(u => u.Name.Equals(name));
+        IEnumerable<User?> enumerable = query.AsEnumerable();
+        return enumerable;
     }
 
     //Find user for login
     public async Task<User> GetUser(string username, string password)
     {
-        throw new NotImplementedException();
+        User user = await context.Users.FirstOrDefaultAsync(u => u.UserName == username && u.Password == password);
+        return user;
     }
 
     public Task RegisterUser(User user)
